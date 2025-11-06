@@ -1,0 +1,54 @@
+h3
+{
+    color: cadetblue;
+}
+
+p{
+    color: cadetblue
+}
+
+body
+{
+    background-color: bisque;
+    justify-content: center;
+    display: flex;
+
+}
+
+button
+{
+    background-color: aquamarine;
+    color:lightcoral;
+}
+
+input 
+{
+    background-color: aquamarine;
+    color:lightcoral;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+fieldset
+{
+    background-color: antiquewhite;
+    
+}
+
+legend
+{
+    color:cornflowerblue;
+    
+    
+}
+
+#op
+{
+    height: 30px;
+}
+
+#bat
+{
+    height: 30px;
+}
