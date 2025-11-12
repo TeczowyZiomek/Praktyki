@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang ="pl">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="zadEgzStyl.css" type="text/css">
+        <title>Montaż paneli podłogowych</title>
+    </head>
+    <body>
+        <div id="naglowek"><img src="grafikaEgz.png" alt="firma usługowa"></div>
+        <div id="menu">
+            <a href="Index2.html">Strona Główna</a>
+            <a href="oferta.html">Oferta</a>
+            <a href="koszty.html">Kalkulator kosztów</a>
+        </div>
+        <div id="glowny"> <iframe name="glowny_frame" src="" width="100%" height="600px" style="border:none;"></iframe></div>
+        <div id="stopka"><h5>Autor strony: 0000</h5></div>
+    </body>
+</html>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<head>
+    <title>Index</title>
+    <link rel="stylesheet" href="zadEgzStyl.css" type="text/css">
+</head>
+<body>
+    <div id="glowny">
+    <h1>Panele podłogowe</h1>
+    
+        <img src="lanilowane.jpg" alt="Laminowane">
+        
+        <p>Panele laminowane</p>
+        
+        <img src="winylowe.jpg" alt="Winylowe">
+        
+        <p>Panele winylowe</p>
+        
+        <img src="deska.webp" alt="Deska">
+        
+        <p>Deska podłogowa</p>
+</div>
+</body>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>oferta</title> 
+    </head>
+    <link rel="stylesheet" href="zadEgzStyl.css" type="text/css">
+</html>
+<body>
+    <div id="glowny">
+        <h1>Koszt montażu paneli podłogowych</h1>
+        <table border="1">
+            <tr>
+                <th rowspan="2">Rodzaj paneli</th>
+                <th colspan="2">Rozmiar</th>
+                <th rowspan="2">Koszt montażu</th>
+            </tr>
+            <tr>
+                <th>Szerokość</th>
+                <th>Długość</th>
+            </tr>
+            <tr>
+                <td>Laminowane</td>
+                <td>30</td>
+                <td>200</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>Winylowe</td>
+                <td>20</td>
+                <td>200</td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <td>Deska</td>
+                <td>10</td>
+                <td>100</td>
+                <td>18</td>
+              </tr>
+        </table>
+    </div>
+</body>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Koszty</title>
+    <link rel="stylesheet" href="zadEgzStyl.css" type="text/css">
+</head>
+<body>
+    <div id="glowny">
+        <h1>Kalkulator kosztów montażu</h1>
+
+        <label for="tekst1">Szerokość pomieszczenia [m]:</label>
+        <input type="text" id="tekst1" name="m">
+
+        <label for="tekst2">Długość pomieszczenia [m]:</label>
+        <input type="text" id="tekst2" name="m">
+
+        <p>Typ panelu</p>
+
+        <div>
+            <input type="radio" id="lam" name="wybierz" value="lam">
+            <label for="lam">Panele laminowane</label>
+        </div>
+        <div>
+            <input type="radio" id="win" name="wybierz" value="win">
+            <label for="win">Panele winylowe</label>
+        </div>
+        <div>
+            <input type="radio" id="desk" name="wybierz" value="desk">
+            <label for="desk">Deska podłogowa</label>
+        </div>
+
+        <div>
+            <button id="oblicz">Oblicz</button>
+        </div>
+
+        <p id="wynik"></p>
+
+        <script>
+            // Funkcja obliczająca koszt
+            function obliczKoszty() {
+                var szerokosc = parseFloat(document.getElementById("tekst1").value);
+                var dlugosc = parseFloat(document.getElementById("tekst2").value);
+                var wybranyTyp = document.querySelector('input[name="wybierz"]:checked');
+                var paragraf = document.getElementById("wynik");
+
+                // Sprawdzenie poprawności danych
+                if (isNaN(szerokosc) || isNaN(dlugosc) || !wybranyTyp || szerokosc <= 0 || dlugosc <= 0) {
+                    paragraf.innerHTML = "Wprowadź poprawne dane.";
+                  
+                    return;
+                }
+
+                var pole = szerokosc * dlugosc;
+                var kosztZaMetr = 0;
+
+                // Typ panelu i koszt
+                if (wybranyTyp.value === "lam") {
+                    kosztZaMetr = 50;
+                } else if (wybranyTyp.value === "win") {
+                    kosztZaMetr = 70;
+                } else if (wybranyTyp.value === "desk") {
+                    kosztZaMetr = 100;
+                }
+
+                var koszt = pole * kosztZaMetr;
+
+               
+                var pole = Number(pole.toFixed(2));
+                var koszt = Number(koszt.toFixed(2));
+
+                
+                paragraf.innerHTML = 
+                    "Pole powierzchni pomieszczenia: " + pole + " m², koszt montażu: " + koszt + " zł.";
+               
+
+                // Przykład użycia setAttribute z tabeli:
+                paragraf.setAttribute("class", "wynik-ok");
+            }
+
+            // Obsługa kliknięcia przycisku
+            document.getElementById("oblicz").addEventListener("click", obliczKoszty);
+        </script>
+    </div>
+</body>
+</html>
