@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="pl">
+    <head>
+        <title>Fabryka cukierków</title>
+        <link rel="stylesheet" href="stylEGZ.css" type="text/css">
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <section id="górny1">
+            <a id="cuks" href="zamowienie.html">Zamów cukierki</a></section>
+        <section id="górny2"><a href="index.html"><img src="haribo.png" alt="Nasze logo"></a></section>
+        <section id="baner"><h1>Strefa Zamowień</h1></section>
+        <section id="lewy">a</section>
+        <section id="prawy">
+            <h2>Nasza Oferta</h2>
+            <table>
+                <tr>
+                    <td colspan="2">Kształty</td>
+                    <td>Możesz zamówić dowolny kolor cukierka</td>
+                </tr>
+                <tr>
+                    <td>
+                    <ol>
+                        <li>cytryna</li>
+                        <li>liść</li>
+                        <li>banan</li>
+                    </ol>
+                </td>
+                </tr>
+            </table>
+        </section>
+        <section id="stopka"><b>PESEL: 0000</b></section>
+    </body>
+</html>
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <title>index</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="stylEGZ.css" type="text/css">
+    </head>
+    <body>
+        <section id="baner"><h1>Słodka kraina</h1></section>
+        <section id="lewy">
+            <img src="michael.jpg">
+        </section>
+    </body>
+</html>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <title>zamowienie</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="stylEGZ.css" type="text/css">
+    </head>
+    <body>
+
+        <script>
+            function Funkcja()
+            {
+                const numer = document.getElementById('licz').value;
+                let NazwaCukierka = '';
+                const wynik = document.getElementById('wpisz'); 
+        
+                if (numer === '1')
+                {
+                    NazwaCukierka = 'cytryna';
+                }
+                else if (numer === '2')
+                {
+                    NazwaCukierka = 'liść';
+                }
+                else if (numer === '3')
+                {
+                    NazwaCukierka = 'banan';
+                }
+                else 
+                {
+                    NazwaCukierka = 'inny';
+                }
+        
+                wynik.textContent = `Twoje zamówienie to: ${NazwaCukierka}`;
+
+                const r = parseInt(document.getElementById('er').value);
+        const g = parseInt(document.getElementById('gie').value);
+        const b = parseInt(document.getElementById('be').value);
+        const btnKolor = document.getElementById('ZmianaKoloru');
+
+      
+        if (
+            !isNaN(r) && r >= 0 && r <= 255 &&
+            !isNaN(g) && g >= 0 && g <= 255 &&
+            !isNaN(b) && b >= 0 && b <= 255
+        ) {
+            btnKolor.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        }
+        }
+    
+            
+
+
+        </script>
+
+        <section id="baner"><h1>Strefa Zamowień</h1></section>
+        <section id="lewy">
+            <p>Numer kształtu:</p>
+            <input type="number" id="licz" name="liczenie">
+            <p>skomponuj swój kolor, podaj RGB</p>
+            <div id="numery">
+            <label for="er">R</label><input type="number" id="er" name="R">
+            <label for="gie">G</label><input type="number" id="gie" name="G">
+            <label for="be">B</label><input type="number" id="be" name="B">
+        </div>
+            <div id="guz">
+                <button onclick="Funkcja()">Zamówienie</button>
+            </div>
+            <p id="wpisz">Twoje zamówienie</p>
+            <button id="ZmianaKoloru">kolor</button>
+        </section>
+
+        
+    </body>
+</html>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#górny1
+{
+    background-color:  rgb(146, 184, 112);
+    text-align: center;
+    width: 50%;
+    height: 170px;
+    float: left;
+   
+}
+#górny2
+{
+    background-color:  rgb(146, 184, 112);
+    text-align: center;
+    width: 50%;
+    height: 170px;
+    float: right;
+    overflow: hidden;
+}
+
+#górny2 img
+{
+    max-width: 100%;
+    height:200px;
+}
+#baner
+{
+    background-color: rgb(100,61,49);
+    text-align: center;
+    color: white;
+    height: 300px;
+    padding: 5px;
+}
+
+#prawy
+{
+    background-color: rgb(146, 184, 112);
+    width: 50%;
+    height: 300px;
+    float: right;
+    
+}
+#lewy
+{
+    background-color: rgb(146, 184, 112);
+    width: 50%;
+    height: 300px;
+    float: left;
+   
+}
+
+#stopka
+{
+    background-color: rgb(100,61,49);
+    text-align: center;
+    color: white;
+    height: 400px;
+    padding: 5px;
+}
+
+#numery
+{
+    height: 30px;
+}
+
+body
+{
+    background-color: rgb(146, 184, 112);
+}
+
+th, td {
+    border: 2px dashed green; 
+    padding: 20px;         
+    margin: 30px;     
+          
+  }
+
+  h1
+  {
+    letter-spacing: 20px; 
+    font-size: 250%;
+  }
+
+  #cuks {
+    background-image: url('cukierki1.jpg');
+    padding-right: 30px;
+    padding-bottom: 120px;
+    font-size: 150%;
+    text-decoration: none;
+  }
