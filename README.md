@@ -1,2 +1,2 @@
 # Praktyki
-rzeczy zrobione na praktyckach
+rzeczy zrobione na praktykach
